@@ -20,8 +20,3 @@ class QuotesSpider(scrapy.Spider):
         if next_pg is not None:
             next_pg = response.urljoin(next_pg)
             yield scrapy.Request(next_pg, callback=self.parse)
-        # page = response.url.split("/")[-2]
-        # filename = 'quotes-%s.html' % page
-        # with open(filename, 'wb') as f:
-        #     f.write(response.body)
-        #self.log('Saved file %s' % filename)
